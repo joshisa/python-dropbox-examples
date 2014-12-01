@@ -1,0 +1,14 @@
+---
+applications:
+- name: <enter_your_unique_bluemix_appname>
+  memory: 128M 
+  instances: 1
+  host: <enter_your_unique_bluemix_hostname>
+  domain: mybluemix.net
+  path: .
+  command: "python ./fileOperationsCLI.py send bluemixrox.txt && python -m SimpleHTTPServer $PORT"
+  buildpack: https://github.com/cloudfoundry/python-buildpack.git
+  env:
+    DROPBOX_APP_KEY : enter_your_app_key_from_dropbox_dev_site_no_quotes
+    DROPBOX_APP_SECRET : enter_your_app_secret_no_quotes
+    DROPBOX_APP_TOKEN : enter_your_generated_app_access_token_no_quotes
